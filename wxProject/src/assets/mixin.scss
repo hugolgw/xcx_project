@@ -1,0 +1,99 @@
+@function ptr($size) {
+    @return ($size/75)*1rem;
+}
+
+//width:100% 
+@mixin sc() {
+  width: 100%;
+  text-align: center;
+}
+
+@mixin sh($h) {
+  width: 100%;
+  height: ptr($h);
+}
+
+@mixin slh($h) {
+  width: 100%;
+  height: ptr($h);
+  line-height: ptr($h);
+}
+
+@mixin sclh($h) {
+  width: 100%;
+  height: ptr($h);
+  line-height: ptr($h);
+  text-align: center;
+}
+
+//width:*rem
+@mixin wc($w) {
+  width: ptr($w);
+  text-align: center;
+}
+
+@mixin wh($w,$h) {
+  width: ptr($w);
+  height:ptr($h);
+}
+
+@mixin wlh($w, $h) {
+  width: ptr($w);
+  height: ptr($h);
+  line-height: ptr($h);
+}
+
+@mixin wclh($w, $h) {
+  width: ptr($w);
+  text-align: center;
+  height: ptr($h);
+  line-height: ptr($h);
+}
+
+@mixin lh($h) {
+  height: ptr($h);
+  line-height: ptr($h);
+}
+
+//position: absolute;
+@mixin patl($t, $l) {
+  position: absolute;
+  top: ptr($t);
+  left: ptr($l);
+}
+
+@mixin patr($t, $r) {
+  position: absolute;
+  top: ptr($t);
+  right: ptr($r);
+}
+
+@mixin pabt($b, $l) {
+  position: absolute;
+  bottom: ptr($b);
+  left: ptr($l);
+}
+
+@mixin pabr($b, $r) {
+  position: absolute;
+  bottom: ptr($b);
+  right: ptr($r);
+}
+
+//定位上下左右居中
+@mixin pacm($w, $h) {
+  width: ptr($w);
+  height: ptr($h);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: ptr(-$h/2);
+  margin-left: ptr(-$w/2);
+}
+
+@mixin pact($w, $h) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
